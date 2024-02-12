@@ -1,14 +1,15 @@
 import {configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { jocksSlice } from '../src/app/api/jokes-api';
+import { jocksSlice } from './services/jokeApiSlice';
 
-export const store = configureStore({
-    reducer:{
+export const makeStore = () => {
+  return configureStore({
+ reducer:{
       [jocksSlice.reducerPath]: jocksSlice.reducer
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({}).concat([jocksSlice.middleware]),
   })
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-setupListeners(store.dispatch)
+}
+// Infer the type of makeStore
+export type AppStore = ReturnType<typeof makeStore>

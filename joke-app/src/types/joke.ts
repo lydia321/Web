@@ -1,4 +1,4 @@
-export default interface Joke {
+export interface Joke {
     joke?: string;
     category: string;
     type: string;

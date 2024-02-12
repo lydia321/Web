@@ -12,8 +12,7 @@ export default function JokesPage() {
       </Head>
 
       <header className="text-center mb-6">
-        <h1 className="text-4xl font-bold text-gray-800">Welcome to Jokes Central</h1>
-        <p className="text-lg text-gray-600">Embark on a journey of random giggles 😄</p>
+        
       </header>
 
       <main>

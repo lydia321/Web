@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import Joke from "../types/Joke";
 
 export const jocksSlice = createApi({
   reducerPath: "jocksSlice",
@@ -11,11 +10,11 @@ export const jocksSlice = createApi({
     'Jokes',
   ],
   endpoints: (builder) => ({
-    getAllJokes: builder.query<{jokes: Joke[]}, any>({
+    getAllJokes: builder.query({
       query: ({searchQuery}) => {
         return {
                 url: `/Any?amount=20&contains=${searchQuery}`,
-        method: "GET", 
+       
         }
       },
       providesTags: ['Jokes'],

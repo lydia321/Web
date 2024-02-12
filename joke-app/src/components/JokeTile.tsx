@@ -1,6 +1,6 @@
 "use client" 
+import { Joke } from '@/types/joke';
 import React, { useState, useEffect, FC } from 'react';
-import Joke from '../app/types/Joke';
 
 interface JokeTileProps {
     joke: Joke
