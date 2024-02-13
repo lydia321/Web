@@ -11,10 +11,9 @@ export const jocksSlice = createApi({
   ],
   endpoints: (builder) => ({
     getAllJokes: builder.query({
-      query: ({searchQuery}) => {
+      query: ({ searchQuery, category }) => {
         return {
-                url: `/Any?amount=20&contains=${searchQuery}`,
-       
+          url: `/${category}?amount=20&contains=${searchQuery}`,
         }
       },
       providesTags: ['Jokes'],

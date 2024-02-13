@@ -1,26 +1,16 @@
-"use client" 
-import React, { useState, useEffect } from 'react';
-import JokeTile from './JokeTile';
-import ErrorComponent from './ErrorComponent';
+"use client"
 import { useGetAllJokesQuery } from '@/services/jokeApiSlice';
 import { Joke } from '@/types/joke';
+import React, { useState } from 'react';
+import ErrorComponent from './ErrorComponent';
+import JokeTile from './JokeTile';
+
+const categories = ["Any", "Programming", "Misc", "Dark", "Pun", "Spooky", "Christmas"];
 
 const JokesDisplay: React.FC = () => {
-  const [jokes, setJokes] = useState<Joke[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("Any");
-  const [categories, setCategories] = useState(["Any", "Programming", "Misc", "Dark", "Pun", "Spooky", "Christmas"]);
   const [searchQuery, setSearchQuery] = useState('');
-  const { data, isSuccess, isError, isLoading } = useGetAllJokesQuery({ searchQuery: searchQuery, category: selectedCategory });
-
-  useEffect(() => {
-    if (isSuccess) {
-      if (data.jokes) {
-        setJokes(data.jokes);
-      } else {
-        setJokes([]);
-      }
-    }
-  }, [data, isSuccess]);
+  const { data: jokes, isSuccess, isError, isLoading } = useGetAllJokesQuery({ searchQuery: searchQuery, category: selectedCategory });
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -34,17 +24,16 @@ const JokesDisplay: React.FC = () => {
               placeholder="Search for jokes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500 bg-gray-200 text-black"
             />
             <div className="flex flex-wrap justify-center">
               {categories.map(category => (
                 <button
                   key={category}
-                  className={`px-6 py-3 text-sm font-medium text-white rounded-full transition duration-300 ease-in-out ${
-                    category === selectedCategory
-                      ? 'bg-pink-600'
-                      : 'bg-green-500'
-                  } hover:bg-pink-700 focus:bg-pink-700 focus:outline-none mb-4`}
+                  className={`px-6 py-3 text-sm font-medium text-white rounded-full transition duration-300 ease-in-out ${category === selectedCategory
+                    ? 'bg-pink-600'
+                    : 'bg-green-500'
+                    } hover:bg-pink-700 focus:bg-pink-700 focus:outline-none mb-4`}
                   onClick={() => setSelectedCategory(category)}
                 >
                   {category}
@@ -60,8 +49,8 @@ const JokesDisplay: React.FC = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {isLoading && <p className="text-lg text-gray-700 animate-pulse">Loading jokes...</p>}
-            {!isLoading && jokes.length === 0 && <p className="text-lg text-gray-700">No jokes found</p>}
-            {isSuccess && jokes.map((joke, index) => (
+            {!isLoading && jokes.jokes.length === 0 && <p className="text-lg text-gray-700">No jokes found</p>}
+            {isSuccess && jokes.jokes.map((joke: Joke, index: number) => (
               <div key={index} className="w-full md:w-auto">
                 <JokeTile joke={joke} />
               </div>

@@ -1,6 +1,4 @@
-import React from 'react';
-import Head from 'next/head';
-import JokesDisplay from '../components/JokesDisplay'
+import JokesDisplay from '../components/JokesDisplay';
 
 export default function JokesPage() {
   return (
