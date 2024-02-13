@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+                                                   Jokes Central Documentation
 
-## Getting Started
+![image](https://github.com/lydia321/Web/assets/42097132/7d5f3c3d-676f-441b-ac77-e63e3f1a3e2d)
+Description: 
 
-First, run the development server:
+Jokes Central is a web application that provides users with a collection of jokes to enjoy. Whether you're in need of a quick laugh or looking for some light-hearted entertainment, Jokes Central has you covered. With its user-friendly interface and a wide variety of joke categories, you're sure to find something that tickles your funny bone.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+How to Run the Application
+To run Jokes Central locally on your machine, follow these steps:
+1) Clone the repository to your local machine:git clone https://github.com/your-username/jokes-central.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2) Navigate to the project directory: cd jokes-central
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3) Install dependencies using npm or yarn: npm install or yarn install 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4) Running the Application, once the dependencies are installed, you can start the application by running the following command: npm install or yarn install 
 
-## Learn More
+5) This will start the development server and open the application in your default web browser. If the browser doesn't open automatically, you can access the application by navigating to http://localhost:3000 in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+Usage
+Once the application is running, you can:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Search for jokes using the search bar
+Filter jokes by category
+Enjoy a wide range of jokes displayed in a visually appealing layout
+Feel free to explore and have fun with Jokes Central!
