@@ -2,7 +2,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Provider } from 'react-redux'
-import StoreProvider from './providers/StoreProvider'
+import StoreProvider from '../providers/StoreProvider'
 import { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,6 +23,6 @@ export default function RootLayout({
           {children}
         </StoreProvider>
       </body>
-      </html>
+    </html>
   );
 }
